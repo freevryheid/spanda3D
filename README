@@ -1,0 +1,32 @@
+Space Panda3D - spanda3D
+
+A space shooter engine using Panda3D. The source code is based largely on snippets from the Panda3D forums. I'm giving it back in the hope that others can benefit from it and that the spanda3D engine can be improved upon through community contributions. Thanks!
+
+Keyboard controls:
+w - accelerate
+s - decelerate
+a - roll left
+d - roll right
+lm - shoot
+rm - lock and launch missile
+esc - exit
+
+See the config settings in config.prc. It uses keyboard-mouse by default. Change this to use an X-box controller instead.
+
+To run: python2 main.py
+
+Sounds downloaded for non-commercial use under the Creative Commons license from freesound.org include:
+ambiance by DrNi,
+missile launch by FxProSound,
+missile lock by AIxy,
+crash by iwiploppenisse,
+an explosion by cydon,
+another explosion by tommccann,
+thrust effect by primeval polypod, and,
+another thruster by nathanshadow.
+
+The sky box was generated using Alex Peterson's Spacescape. Hud elements done using inkscape and the crude enemy fighter usings wings3d. The sources for these are in the misc folder.
+
+Enjoy and please let me know how the engine can be improved upon.
+
+freevryheid
