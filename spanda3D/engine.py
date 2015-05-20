@@ -91,7 +91,6 @@ class Engine(ShowBase):
         Enemy(self, 0, x, y, z)
 
     def AI_update(self, task):
-        # if len(self.targets) > 0:
         self.AIworld.update()
         return task.cont
 
@@ -106,6 +105,7 @@ class Engine(ShowBase):
         self.txtFuel = OnscreenText(parent=self.render2d, align=TextNode.ALeft, pos=(-0.95, 0.8), text='FUEL', fg=(1, 1, 1, 0.5), scale=0.05, font=self.font, mayChange=True)
         self.txtSpeed = OnscreenText(parent=self.render2d, align=TextNode.ALeft, pos=(-0.95, 0.7), text='SPEED', fg=(1, 1, 1, 0.5), scale=0.05, font=self.font, mayChange=True)
         self.txtDist = OnscreenText(parent=self.render2d, align=TextNode.ALeft, pos=(-0.95, 0.6), text='DIST', fg=(1, 1, 1, 0.5), scale=0.05, font=self.font, mayChange=True)
+        self.txtCoord = OnscreenText(parent=self.render2d, align=TextNode.ALeft, pos=(-0.95, 0.5), text='COORD', fg=(1, 1, 1, 0.5), scale=0.05, font=self.font, mayChange=True)
         self.taskMgr.doMethodLater(1, self.instruments, "task-instruments")
 
     def instruments(self, task):
@@ -115,6 +115,7 @@ class Engine(ShowBase):
             self.txtDist.setText("DISTANCE: %s" % str(round(self.dist, 1)))
         else:
             self.txtDist.setText("DISTANCE: ---")
+        self.txtCoord.setText("COORD: %s %s %s" % (str(round(self.fighter.getX(), 1)), str(round(self.fighter.getY(), 1)), str(round(self.fighter.getZ(), 1))))
         return task.again
 
     def set_key(self, key, value):

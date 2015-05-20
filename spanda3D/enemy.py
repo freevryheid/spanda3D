@@ -57,7 +57,15 @@ class Enemy:
         self.AIchar = AICharacter("enemy", self.np, 100, 10., 50)
         self.base.AIworld.addAiChar(self.AIchar)
         self.AIbehaviors = self.AIchar.getAiBehaviors()
-        self.AIbehaviors.wander(50, 0, 1000, 1.0)
+        # self.AIbehaviors.wander(50, 0, 1000, 1.0)
+        # self.AIbehaviors.seek(self.base.fighter)
+        self.AIbehaviors.evade(self.base.fighter, 1000, 2000)
+        # self.base.taskMgr.doMethodLater(1, self.call_status, "task-call-status")
+
+    def call_status(self, task):
+        status = self.AIbehaviors.behaviorStatus("evade")
+        print("status: ", status)
+        return task.again
 
     def explode(self):
         self.snd_blip.stop()
